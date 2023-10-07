@@ -1,2 +1,1 @@
-# yuziwoo-src
- import source files
+### 이미지나 파일을 웹에 올려야 할 때 사용하는 저장소입니다.
