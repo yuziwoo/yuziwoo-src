@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="input" />
+    <button id="button">복사</button>
+    <div><h1 class="answer"></h1></div>
+
+    <script>
+      const h1 = document.getElementsByClassName('answer')[0];
+      const button = document.getElementById('button');
+      const input = document.getElementById('input');
+      let value = '';
+      input.addEventListener('input', (e) => {
+        const result = e.target.value.split(' ').map((v) => v.replace(/\//g, '-'));
+        h1.innerHTML = result.join(`</br>`);
+        value = result.join('\n');
+      });
+
+      button.addEventListener('click', () => {
+        navigator.clipboard.writeText(value);
+      });
+    </script>
+  </body>
+</html>
